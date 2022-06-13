@@ -10,7 +10,6 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Table(name = "users")
 public class User {
 
@@ -23,7 +22,7 @@ public class User {
     private Integer id;
 
     @Column(length = 30)
-    private String firstname;
+    private String username;
 
     @Column(length = 30)
     private String lastname;
@@ -31,10 +30,8 @@ public class User {
     @Column(length = 10)
     private Long phone;
 
-    @Column(length = 255)
     private String mail;
 
-    @Column(length = 255)
     private String password;
 
     @Column(length = 10)

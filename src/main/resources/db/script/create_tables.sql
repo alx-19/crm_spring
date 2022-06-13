@@ -7,7 +7,7 @@ create table users
 (
     id        serial
         primary key,
-    firstname varchar(30),
+    username varchar(30),
     lastname  varchar(30),
     mail      varchar(255),
     password  varchar(255),
