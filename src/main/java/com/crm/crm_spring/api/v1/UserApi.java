@@ -47,8 +47,7 @@ public class UserApi {
     @Operation(summary = "Create a user")
     public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto) {
         UserDto userCreated = userMapper.mapToDto(userService.create(userMapper.mapToModel(userDto)));
-        return ResponseEntity.created(URI.create("/v1/users/" + userCreated.getId()))
-                .body(userCreated);
+        return ResponseEntity.created(URI.create("/v1/users/" + userCreated.getId())).body(userCreated);
     }
 
     @DeleteMapping(path = "/{id}")
