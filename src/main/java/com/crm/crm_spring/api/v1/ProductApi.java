@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/v1/products")
+@RequestMapping("api/v1/products")
 @CrossOrigin(value = {"*"}, allowedHeaders = {"*"})
 @RequiredArgsConstructor
 public class ProductApi {

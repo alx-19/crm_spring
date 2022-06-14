@@ -16,7 +16,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/users")
+@RequestMapping("api/v1/users")
 @CrossOrigin(value = {"*"}, allowedHeaders = {"*"})
 @RequiredArgsConstructor
 public class UserApi {

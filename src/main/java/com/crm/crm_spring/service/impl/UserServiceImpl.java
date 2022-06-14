@@ -47,7 +47,6 @@ public class UserServiceImpl implements UserService {
             throw new NotAllowedToDeleteException("The giver user qtill active");
         }
     }
-
     private boolean canDeleteUser(User user) {
         return (null == user.getOrder() && user.getOrder().isEmpty());
     }
