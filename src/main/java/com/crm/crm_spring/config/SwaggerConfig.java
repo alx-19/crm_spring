@@ -13,7 +13,7 @@ public class SwaggerConfig {
     @Value("${info.project.name}")
     private String projectName;
 
-    @Value("@info.project.desc@")
+    @Value("${info.project.description}")
     private String projectDescription;
 
     @Value("${info.project.version}")

@@ -11,8 +11,8 @@
     <groupId>com.crm</groupId>
     <artifactId>crm_spring</artifactId>
     <version>19.0.1-SNAPSHOT</version>
-    <name>Application-back CRM</name>
-    <description>Application_crm_spring</description>
+    <name>CRM BREIZHOUSE</name>
+    <description>Application_back_crm_spring</description>
     <properties>
         <java.version>17</java.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
