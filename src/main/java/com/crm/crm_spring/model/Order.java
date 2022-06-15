@@ -24,17 +24,11 @@ public class Order {
     @Column(length = 10)
     private Integer reference;
 
-    @Column(length = 100)
-    private String name;
-
     @Column(length = 10)
     private String status;
 
     @Column(length = 10)
     private String date;
-
-    @Column(length = 6)
-    private Long price;
 
     /**
      * relations

@@ -29,7 +29,7 @@ public class OrderServiceImpl implements OrderService {
     // debut de la déclaration des methodes implémenté de l'interface
     @Override
     public List<Order> getAll() {
-        return this.orderRepository.findAll(Sort.by("name").ascending());
+        return this.orderRepository.findAll(Sort.by("date").ascending());
     }
 
     @Override
@@ -60,10 +60,8 @@ public class OrderServiceImpl implements OrderService {
         log.debug("Attempting to update Order {}", order.getId());
         Order existingOrder = this.getById(order.getId());
         existingOrder.setReference(order.getReference());
-        existingOrder.setName(order.getName());
         existingOrder.setStatus(order.getStatus());
         existingOrder.setDate(order.getDate());
-        existingOrder.setPrice(order.getPrice());
         return this.orderRepository.save(existingOrder);
     }
 

@@ -68,7 +68,7 @@ public class OrderApi {
             MediaType.TEXT_PLAIN_VALUE})
     @Operation(summary = "Create order", responses = @ApiResponse(responseCode = "201", description = "Created"))
     public ResponseEntity<OrderDto> createOrder(@RequestBody final OrderDto orderDto) {
-        log.debug("Attempting to create order with name {}", orderDto.getName());
+        log.debug("Attempting to create order with name {}", orderDto.getReference());
         OrderDto newOrder = orderMapper
                 .mapOrderToOrderDto(orderService
                         .create(orderMapper.mapOrderDtoToOrder(orderDto)));

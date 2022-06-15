@@ -15,9 +15,6 @@ public class OrderDto {
 
     private Integer id;
     private Integer reference;
-    private String name;
     private String status;
     private String date;
-    private Long price;
-
 }
