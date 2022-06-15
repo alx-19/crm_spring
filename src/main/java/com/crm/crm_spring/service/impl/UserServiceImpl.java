@@ -44,11 +44,11 @@ public class UserServiceImpl implements UserService {
         if(this.canDeleteUser(userToDelete)){
             this.userRepository.delete(userToDelete);
         }else {
-            throw new NotAllowedToDeleteException("The giver user qtill active");
+            throw new NotAllowedToDeleteException("The giver user still active");
         }
     }
     private boolean canDeleteUser(User user) {
-        return (null == user.getOrder() && user.getOrder().isEmpty());
+        return (null == user.getOrder() || user.getOrder().isEmpty());
     }
 
 
