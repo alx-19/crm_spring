@@ -50,9 +50,7 @@ public class Customer {
 
     @Column(length = 15)
     private String mobile;
-
     private String notes;
-
     private Boolean active;
 
     /**

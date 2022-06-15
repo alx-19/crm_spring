@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-@RequiredArgsConstructor
+
 public class MyUserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
@@ -21,8 +21,10 @@ public class MyUserDetailsServiceImpl implements UserDetailsService {
 
         try {
             User existingUser = this.userService.getByUsername(username);
+            // si le user existe en bdd on continu
             return new MyUserDetails(existingUser);
         } catch (UnknownResourceException ure) {
+            // cas contraire message d'erreur
             throw new UsernameNotFoundException("User with username " + username + " not found.");
         }
     }

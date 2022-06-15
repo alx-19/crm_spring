@@ -1,18 +1,13 @@
-DROP TABLE IF EXISTS orders;
-DROP TABLE IF EXISTS customers;
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS products;
-
 create table users
 (
-    id        serial
+    id       serial
         primary key,
-    username varchar(30),
-    lastname  varchar(30),
-    mail      varchar(255),
-    password  varchar(255),
-    phone     bigint,
-    role      varchar(10)
+    lastname varchar(30),
+    mail     varchar(255),
+    password varchar(255),
+    phone    bigint,
+    role     varchar(10),
+    username varchar(30)
 );
 
 alter table users

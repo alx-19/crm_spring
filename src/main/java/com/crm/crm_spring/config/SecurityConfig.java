@@ -21,11 +21,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new MyUserDetailsServiceImpl();
     }
 
+    // bean pour l'encodage du mdp
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+    // fonction encodage du mdp
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();

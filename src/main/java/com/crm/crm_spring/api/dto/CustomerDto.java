@@ -26,5 +26,6 @@ public class CustomerDto {
     private String mobile;
     private String notes;
     private Boolean active;
+    // pour valider la création d'un customer il faut obligatoirement un user
     private Integer dealerId;
 }

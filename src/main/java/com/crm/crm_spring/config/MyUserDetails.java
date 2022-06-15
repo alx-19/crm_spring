@@ -11,12 +11,14 @@ import java.util.List;
 
 @RequiredArgsConstructor
 public class MyUserDetails implements UserDetails {
-
+    // injection du user
     private final User user;
 
     @Override
+    // une collection vaste mais au minimum de GrantedAuthority ( SimpleGrantedAuthority ok car implement de GrantedAuthority )
     public Collection<? extends GrantedAuthority> getAuthorities() {
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority(this.user.getRole());
+        // verification du role
         return List.of(authority);
     }
 
