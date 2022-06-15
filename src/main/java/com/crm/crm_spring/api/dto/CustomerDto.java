@@ -26,4 +26,5 @@ public class CustomerDto {
     private String mobile;
     private String notes;
     private Boolean active;
+    private Integer dealerId;
 }
