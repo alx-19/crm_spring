@@ -67,7 +67,7 @@ public class ProductApi {
             MediaType.TEXT_PLAIN_VALUE})
     @Operation(summary = "Create product", responses = @ApiResponse(responseCode = "201", description = "Created"))
     public ResponseEntity<ProductDto> createProduct(@RequestBody final ProductDto productDto) {
-        log.debug("Attempting to create product with lastname {}", productDto.getLastname());
+        log.debug("Attempting to create product with name {}", productDto.getName());
         ProductDto newProduct = productMapper
                 .mapProductToProductDto(productService
                         .create(productMapper.mapProductDtoToProduct(productDto)));

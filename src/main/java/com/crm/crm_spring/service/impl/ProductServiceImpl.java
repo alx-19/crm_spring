@@ -29,7 +29,7 @@ public class ProductServiceImpl implements ProductService {
     // debut de la déclaration des methodes implémenté de l'interface
     @Override
     public List<Product> getAll() {
-        return this.productRepository.findAll(Sort.by("lastname").ascending());
+        return this.productRepository.findAll(Sort.by("priceHt").ascending());
     }
 
     @Override
