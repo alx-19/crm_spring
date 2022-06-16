@@ -3,63 +3,64 @@ package com.crm.crm_spring;
 import com.crm.crm_spring.model.Customer;
 import com.crm.crm_spring.model.Order;
 import com.crm.crm_spring.model.Product;
+import com.crm.crm_spring.model.User;
 import com.crm.crm_spring.repository.CustomerRepository;
 import com.crm.crm_spring.repository.OrderRepository;
 import com.crm.crm_spring.repository.ProductRepository;
 import com.crm.crm_spring.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.Date;
 import java.util.List;
 
 @SpringBootTest
-@RequiredArgsConstructor
 class CrmSpringApplicationTests {
 
-    // declaration d'un variable produit de type repository pour pouvoir faire tous les test sur les produits
-    private final ProductRepository productRepository;
-    // declaration d'un variable produit de type repository pour pouvoir faire tous les test sur les commandes
-    private final OrderRepository orderRepository;
-    // declaration d'un variable produit de type repository pour pouvoir faire tous les test sur les clients
-    private final CustomerRepository customerRepository;
-    // declaration d'un variable produit de type repository pour pouvoir faire tous les test sur les utilisateurs
-    private final UserRepository userRepository;
+    @Autowired
+    private ProductRepository productRepository;
+    @Autowired
+    private OrderRepository orderRepository;
+    @Autowired
+    private CustomerRepository customerRepository;
+    @Autowired
+    private UserRepository userRepository;
 
     /**
      *  Tests unitaires pour classe Product
      */
-
     @Test
     public void testCreateProduct() {
-        // creation d'un produit avec propriété + grace a produit repository et ses methodes qu'il extend je le fige en bdd
+        // creation d'un produit avec propriété
         Product prod = new Product();
         productRepository.save(prod);
     }
 
     @Test
     public void testFindProduct() {
-        // test du find produit avec .get() sinon pour obeservable
+        // test du find produit avec .get() pour obeservable
         Product p = productRepository.findById(3).get();
         System.out.println(p);
     }
 
     @Test
     public void testUpdateProduct() {
+        // test update
         Product p = productRepository.findById(3).get();
         p.setName("testUnitaire10");
         productRepository.save(p);
+        System.out.println(p.getName());
     }
 
-    // ne pas supprimer admin et user ID 1 & 2
     @Test
     public void testDeleteProduct() {
+        // test du delete
         productRepository.deleteById(3);
     }
 
     @Test
     public void testFindAllProducts() {
+        // test de récupeartion général
         List<Product> prods = productRepository.findAll();
         for (Product p : prods) {
             System.out.println(p);
@@ -72,14 +73,14 @@ class CrmSpringApplicationTests {
 
     @Test
     public void testCreateOrder() {
-        // creation d'un produit avec propriété + grace a produit repository et ses methodes qu'il extend je le fige en bdd
+        // creation d'une commande avec propriété
         Order prod = new Order();
         orderRepository.save(prod);
     }
 
     @Test
     public void testFindOrder() {
-        // test du find produit avec .get() sinon pour obeservable
+        // test du find commande avec .get() pour obeservable
         Order o = orderRepository.findById(3).get();
         System.out.println(o);
     }
@@ -107,17 +108,14 @@ class CrmSpringApplicationTests {
     /**
      *  Tests unitaires pour classe Customer
      */
-
     @Test
     public void testCreateCustomer() {
-        // creation d'un produit avec propriété + grace a produit repository et ses methodes qu'il extend je le fige en bdd
         Customer prod = new Customer();
         customerRepository.save(prod);
     }
 
     @Test
     public void testFindCustomer() {
-        // test du find produit avec .get() sinon pour obeservable
         Customer c = customerRepository.findById(3).get();
         System.out.println(c);
     }
@@ -139,6 +137,42 @@ class CrmSpringApplicationTests {
         List<Customer> prods = customerRepository.findAll();
         for (Customer c : prods) {
             System.out.println(c);
+        }
+    }
+
+    /**
+     *  Tests unitaires pour classe user
+     */
+
+    @Test
+    public void testCreateUser() {
+        User prod = new User();
+        userRepository.save(prod);
+    }
+
+    @Test
+    public void testFindUser() {
+        User u = userRepository.findById(3).get();
+        System.out.println(u);
+    }
+
+    @Test
+    public void testUpdateUser() {
+        User u = userRepository.findById(3).get();
+        u.setUsername("test");
+        userRepository.save(u);
+    }
+
+    @Test
+    public void testDeleteUser() {
+        userRepository.deleteById(3);
+    }
+
+    @Test
+    public void testFindAllUsers() {
+        List<User> prods = userRepository.findAll();
+        for (User p : prods) {
+            System.out.println(p);
         }
     }
 }
