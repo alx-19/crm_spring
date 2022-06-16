@@ -35,6 +35,9 @@ public class Product {
 
     private String photoUrl;
 
+    private String description;
+
+
     /**
      * relation
      */

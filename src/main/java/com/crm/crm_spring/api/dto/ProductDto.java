@@ -24,4 +24,5 @@ public class ProductDto {
     private Long priceHt;
     private Long surface;
     private String photoUrl;
+    private String description;
 }
