@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService {
         existingUser.setLastname(user.getLastname());
         existingUser.setMail(user.getMail());
         existingUser.setPhone(user.getPhone());
-        existingUser.setRole(user.getRole());
+        existingUser.setGrants(user.getGrants());
         existingUser.setOrder(user.getOrder());
         // Chiffrer le MDP reçu
         String passwordEncoded = new BCryptPasswordEncoder().encode(user.getPassword());

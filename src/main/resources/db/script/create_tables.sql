@@ -6,7 +6,7 @@ create table users
     mail     varchar(255),
     password varchar(255),
     phone    bigint,
-    role     varchar(10),
+    grants     varchar(10),
     username varchar(30)
 );
 

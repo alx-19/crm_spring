@@ -28,14 +28,14 @@ public class User {
     private String lastname;
 
     @Column(length = 10)
-    private Long phone;
+    private String phone;
 
     private String mail;
 
     private String password;
 
     @Column(length = 10)
-    private String role;
+    private String grants;
 
     /**
      * relation

@@ -17,7 +17,7 @@ public class MyUserDetails implements UserDetails {
     @Override
     // une collection vaste mais au minimum de GrantedAuthority ( SimpleGrantedAuthority ok car implement de GrantedAuthority )
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(this.user.getRole());
+        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(this.user.getGrants());
         // verification du role
         return List.of(authority);
     }
