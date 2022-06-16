@@ -1,5 +1,6 @@
 package com.crm.crm_spring;
 
+import com.crm.crm_spring.exception.UnknownResourceException;
 import com.crm.crm_spring.model.Customer;
 import com.crm.crm_spring.model.Order;
 import com.crm.crm_spring.model.Product;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootTest
 class CrmSpringApplicationTests {
@@ -38,9 +40,9 @@ class CrmSpringApplicationTests {
 
     @Test
     public void testFindProduct() {
-        // test du find produit avec .get() pour obeservable
-        Product p = productRepository.findById(3).get();
-        System.out.println(p);
+        // test du find
+        Product pInBase = productRepository.findById(3)
+                .orElseThrow(UnknownResourceException::new);
     }
 
     @Test
@@ -80,9 +82,9 @@ class CrmSpringApplicationTests {
 
     @Test
     public void testFindOrder() {
-        // test du find commande avec .get() pour obeservable
-        Order o = orderRepository.findById(3).get();
-        System.out.println(o);
+        // test du find
+        Order oInBase = orderRepository.findById(3)
+                .orElseThrow(UnknownResourceException::new);
     }
 
     @Test
@@ -116,8 +118,8 @@ class CrmSpringApplicationTests {
 
     @Test
     public void testFindCustomer() {
-        Customer c = customerRepository.findById(3).get();
-        System.out.println(c);
+        Customer cInBase = customerRepository.findById(3)
+                .orElseThrow(UnknownResourceException::new);
     }
 
     @Test
@@ -152,8 +154,8 @@ class CrmSpringApplicationTests {
 
     @Test
     public void testFindUser() {
-        User u = userRepository.findById(3).get();
-        System.out.println(u);
+        User uInBase = userRepository.findById(3)
+                .orElseThrow(UnknownResourceException::new);
     }
 
     @Test
