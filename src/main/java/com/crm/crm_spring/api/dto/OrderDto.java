@@ -17,4 +17,8 @@ public class OrderDto {
     private Integer reference;
     private String status;
     private String date;
+    // relation
+   private Integer customerId;
+   private Integer userId;
+   private Integer productId;
 }
