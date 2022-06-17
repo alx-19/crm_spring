@@ -6,8 +6,8 @@ create table users
     mail     varchar(255),
     password varchar(255),
     phone    bigint,
-    grants     varchar(10),
-    username varchar(30)
+    username varchar(30),
+    grants   varchar(10)
 );
 
 alter table users
