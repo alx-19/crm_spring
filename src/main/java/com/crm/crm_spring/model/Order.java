@@ -14,6 +14,7 @@ public class Order {
 
     /**
      * attributs
+     * revoir les noms des attributs, en ajouter, utiliser UK et ajouter des @columns  + parameters
      */
 
     @Id
@@ -33,17 +34,17 @@ public class Order {
      * relations
      */
 
-// relation entre vendeur et commande
+// relation entre user et order
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User dealer;
 
-// relation entre une commande et un produit
+// relation entre une order et un product
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id", nullable = false)
     private Product house;
 
-// relation entre un acheteur et un produits
+// relation entre un customer et un product
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;

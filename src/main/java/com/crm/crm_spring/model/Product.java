@@ -15,6 +15,7 @@ public class Product {
 
     /**
      * attributs
+     * revoir les noms des attributs, en ajouter, utiliser UK et ajouter des @columns  + parameters
      */
 
     @Id
@@ -42,6 +43,7 @@ public class Product {
      * relation
      */
 
+    /* Attentio a cette relation car il ne doit pas y avoir de FK order_id dans product */
 // relation entre une commande et un produit
     @OneToMany(mappedBy = "house")
     private List <Order> order;

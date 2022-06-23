@@ -19,6 +19,7 @@ public class Customer {
 
     /**
      * attributs
+     * revoir les noms des attributs, en ajouter, utiliser UK et ajouter des @columns + parameters
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

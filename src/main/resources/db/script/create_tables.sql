@@ -1,3 +1,16 @@
+/* Création des tables */
+
+/* Création des tables sans ordre vu que les contraintes sont ajoutees apres */
+-- revoir les attributs
+
+/* Ajout des clés primaires sans ordre */
+-- sélectionner les id voir firstname/lastname/usernamer en tant que PK
+
+/* Ajout des clés étrangères dans l'ordre */
+-- indiquer les _id qui seront rappeler dans la table Orders et Customers
+
+
+
 create table users
 (
     id       serial

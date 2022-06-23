@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.List;
 
+// Ajout des paramètres de Lombock pour générer toutes les méthodes, constructeurs, etc.
 @Entity
 @Setter
 @Getter
@@ -15,6 +16,7 @@ public class User {
 
     /**
      * attributs
+     * revoir les noms des attributs, en ajouter, utiliser UK et ajouter des @columns + parameters
      */
 
     @Id
@@ -41,11 +43,17 @@ public class User {
      * relation
      */
 
-// relation entre vendeur et acheteur
+// relation entre user et customer
     @OneToMany(mappedBy = "dealer")
     private List<Customer> customer;
 
-// relation entre vendeur et commande
+
+    /*
+        Revoir cette relation puisque l'id du customer
+        est une FK de Order et donc on doit pouvoir récupérer
+        l'id du user qui est une FK de customer
+    */
+// relation entre user et order
     @OneToMany(mappedBy = "dealer")
     private List<Order> order;
 
